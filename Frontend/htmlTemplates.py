@@ -1,0 +1,44 @@
+css = '''
+<style>
+.chat-message {
+    padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 1rem; display: flex
+}
+.chat-message.user {
+    background-color: #2b313e
+}
+.chat-message.bot {
+    background-color: #475063
+}
+.chat-message .avatar {
+  width: 20%;
+}
+.chat-message .avatar img {
+  max-width: 78px;
+  max-height: 78px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat-message .message {
+  width: 80%;
+  padding: 0 1.5rem;
+  color: #fff;
+}
+'''
+
+bot_template = '''
+<div class="chat-message bot">
+    <div class="avatar">
+        <img src="data:image/jpeg;base64,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" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+    </div>
+    <div class="message"> <b><I>AI Response</I></b>: {{MSG}}</div>
+</div>
+'''
+
+user_template = '''
+<div class="chat-message user">
+    <div class="avatar">
+        <img src="https://media.licdn.com/dms/image/D5603AQH2K2p1717N5w/profile-displayphoto-shrink_800_800/0/1719204758129?e=1727308800&v=beta&t=UQ-t4_TEWq44UVbxyCOQ6x1_Qjzyk4ZUCyG4KSf68L8" style="max-height: 78px; max-width: 78px; border-radius: 50%; object-fit: cover;">
+    </div>    
+    <div class="message"> <b>User</b>: {{MSG}}</div>
+</div>
+'''
